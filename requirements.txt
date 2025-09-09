@@ -1,0 +1,8 @@
+git+https://github.com/serengil/deepface.git
+python-dotenv
+tqdm
+psycopg2
+kafka-python
+fastapi==0.116.1
+faststream[kafka]
+uvicorn
