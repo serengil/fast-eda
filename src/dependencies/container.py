@@ -6,6 +6,9 @@ from dependencies.variables import Variables
 
 
 class Container:
+    _instance = None
+    _initialized = False
+    
     def __init__(self, variables: Variables):
         self.logger = Logger()
         self.deepface_service = DeepFaceService(
@@ -29,4 +32,10 @@ class Container:
             is_eda_activated=variables.is_eda_activated,
         )
 
+        self._initialized = True
         self.logger.info("Container initialized")
+
+    def __new__(cls, variables=None)
+        if cls._instance = None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
